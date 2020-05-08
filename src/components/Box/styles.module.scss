@@ -1,0 +1,17 @@
+@import '~variables.scss';
+
+.box {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+
+  @media (min-width: $small-up) {
+    padding: 30px;
+  }
+}
+
+.noPadding {
+  padding: 0;
+}

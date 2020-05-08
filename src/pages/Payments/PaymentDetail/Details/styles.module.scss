@@ -1,0 +1,55 @@
+@import '~variables';
+
+.details {
+  margin: 0;
+
+  @media (min-width: $small-up) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px 30px;
+    align-items: center;
+  }
+}
+
+.details dt {
+  font-weight: bold;
+
+  @media (max-width: $small-down) {
+    margin-top: 15px;
+  }
+}
+
+.details dt:first-child {
+  margin: 0;
+}
+
+.details dd {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.details svg {
+  margin-right: 10px;
+}
+
+.customerLink {
+  appearance: none;
+  margin-left: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  transition: color 0.15s ease-out;
+}
+
+.customerLink:hover,
+.customerLink:focus {
+  outline: 0;
+  color: var(--color-primary-hover);
+}

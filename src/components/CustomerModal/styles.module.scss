@@ -1,0 +1,28 @@
+.customer {
+  text-align: center;
+}
+
+.image {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.image img {
+  width: 80px;
+  height: 80px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+.company {
+  color: #aaa;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
