@@ -4,8 +4,15 @@ import Box from 'components/Box';
 import CustomerModal from 'components/CustomerModal';
 import { getPaymentMethodName } from 'utils';
 import styles from './styles.module.scss';
+import { Payment } from 'ts-models/Payment';
+import { Customer } from 'ts-models/Customer';
 
-const Details = ({ payment, customer }) => {
+interface Props {
+  payment: Payment;
+  customer: Customer;
+}
+
+const Details = ({ payment, customer }: Props) => {
   const [isOpen, setOpen] = useState(false);
 
   return (

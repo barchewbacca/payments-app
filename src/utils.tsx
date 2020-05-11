@@ -1,5 +1,5 @@
 /* eslint-disable default-case */
-export const getPaymentMethodName = id => {
+export const getPaymentMethodName = (id: string) => {
   switch (id) {
     case 'ideal':
       return 'iDEAL';

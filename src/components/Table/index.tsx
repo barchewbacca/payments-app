@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from 'components/Box';
 import styles from './styles.module.scss';
 
-const Table = props => (
+const Table = () => (
   <Box noPadding>
     <div className={styles.table}>
       Please turn me into a table full of data{' '}

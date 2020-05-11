@@ -3,9 +3,16 @@ import ReactModal from 'react-modal';
 
 import styles from './styles.module.scss';
 
-ReactModal.setAppElement(document.getElementById('root'));
+interface Props {
+  children: React.ReactNode;
+  isOpen: boolean;
+  onClose: () => void;
+  contentLabel: string;
+}
 
-const Modal = ({ children, onClose, ...rest }) => (
+ReactModal.setAppElement(document.getElementById('root')!);
+
+const Modal = ({ children, onClose, ...rest }: Props) => (
   <ReactModal
     {...rest}
     className={styles.modal}
