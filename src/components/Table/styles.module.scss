@@ -1,4 +1,48 @@
-.table {
-  padding: 30px;
-  text-align: center;
+.list {
+  list-style: none;
+  color: #6d6d6d;
+  font-size: 14px;
+  padding: 30px 50px;
+  display: table;
+  width: 100%;
+}
+
+.item {
+  height: 53px;
+  display: table-row;
+
+  div {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 15px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  svg {
+    width: 26px;
+    height: 26px;
+    display: block;
+  }
+
+  &:first-child {
+    color: #151515;
+    font-weight: bold;
+  }
+
+  &:not(:first-child) {
+    text-transform: lowercase;
+  }
+}
+
+.item + .item {
+  div {
+    border-top: 1px solid #edeff1;
+  }
 }

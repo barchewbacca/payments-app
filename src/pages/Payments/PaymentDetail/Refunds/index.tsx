@@ -14,7 +14,7 @@ const Refunds = ({ refunds }: Props) => {
   return (
     <>
       <h2>Refunds</h2>
-      <Table />
+      {/* <Table /> */}
     </>
   );
 };

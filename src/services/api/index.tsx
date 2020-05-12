@@ -1,5 +1,5 @@
 class Api {
-  get(url, options) {
+  get(url: string, options: {}): Promise<Response> {
     /*
      * Implement your fetch logic here.
      *
@@ -9,10 +9,7 @@ class Api {
      * - Payment refunds (not every payment has refunds): http://localhost:4000/api/payments/:payment_id/refunds
      * - Customer details: http://localhost:4000/api/customers/:customer_id
      */
-
-    throw new Error(
-      'Please implement your fetch logic in src/services/api/index.js.'
-    );
+    return fetch(url);
   }
 }
 

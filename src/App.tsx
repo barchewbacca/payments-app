@@ -11,11 +11,13 @@ import Payments from './pages/Payments';
 const App = () => (
   <Router>
     <div className="app">
-      <Switch>
-        <Redirect exact from="/" to="/payments" />
-        <Route path="/payments" component={Payments} />
-        <Route path="*" component={NotFound} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Redirect exact from="/" to="/payments" />
+          <Route path="/payments" component={Payments} />
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </div>
     </div>
   </Router>
 );

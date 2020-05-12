@@ -10,6 +10,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-modal": "^3.10.5",
     "@types/react-router-dom": "^5.1.5",
+    "date-fns": "^2.13.0",
     "lodash": "^4.17.15",
     "micro": "^9.3.4",
     "microrouter": "^3.1.3",
@@ -25,6 +26,7 @@
     "test": "react-scripts test",
     "start-api": "micro api/index.js -l tcp://localhost:4000"
   },
+  "proxy": "http://localhost:4000",
   "eslintConfig": {
     "extends": "react-app"
   },

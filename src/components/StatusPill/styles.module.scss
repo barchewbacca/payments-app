@@ -1,0 +1,41 @@
+.pill {
+  font-size: 10px;
+  line-height: 1;
+  font-weight: bold;
+  height: 16px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 3px;
+  padding: 0 4px;
+  color: #a1a1a1;
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+}
+
+.expired,
+.canceled {
+  background-color: #e6e6e6;
+  border: 1px solid #ccc;
+}
+
+.paid,
+.open,
+.failed {
+  color: #fff;
+}
+
+.paid {
+  background-color: #4cd964;
+  border-color: #55ce69;
+}
+
+.open {
+  background-color: #ffcc01;
+  border-color: #f2c40d;
+}
+
+.failed {
+  background-color: #fe3b31;
+  border-color: #e23535;
+}
