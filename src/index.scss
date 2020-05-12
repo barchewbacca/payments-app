@@ -81,11 +81,15 @@ hr {
   padding: 20px;
   background: #f7f7f7;
 
-  @media (min-width: $small-up) {
+  @include small-up {
     padding: 30px;
   }
 
-  @media (min-width: $medium-up) {
+  @include medium-up {
+    padding: 50px;
+  }
+
+  @include large-up {
     padding: 60px 80px;
   }
 }

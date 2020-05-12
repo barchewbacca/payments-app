@@ -14,3 +14,21 @@ $extra-large-down: 1159px;
 $extra-large-up: 1160px;
 $huge-down: 1539px;
 $huge-up: 1540px;
+
+@mixin small-up {
+  @media (min-width: $small-up) {
+    @content;
+  }
+}
+
+@mixin medium-up {
+  @media (min-width: $medium-up) {
+    @content;
+  }
+}
+
+@mixin large-up {
+  @media (min-width: $large-up) {
+    @content;
+  }
+}

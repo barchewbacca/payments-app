@@ -29,9 +29,9 @@ export const getCurrencySymbol = (currency: string): string => {
 };
 
 /**
- * Returns prettified timestamp in a format of "dd MMM yyyy 'at' hh:mm".
+ * Returns prettified timestamp in a format of "d MMM yyyy 'at' hh:mm".
  * @param timestamp A timestamp that needs to be formatted.
  */
 export const getFormattedTimestamp = (timestamp: string): string => {
-  return format(new Date(timestamp), `dd MMM yyyy 'at' hh:mm`);
+  return format(new Date(timestamp), `d MMM yyyy 'at' hh:mm`);
 };

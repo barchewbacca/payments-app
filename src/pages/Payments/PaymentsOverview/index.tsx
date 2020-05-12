@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Table from 'components/Table';
 import api from 'services/api';
 import { Payment } from 'ts-models/Payment';
+import styles from './styles.module.scss';
 
 interface State {
   data: Payment[];
@@ -22,7 +23,7 @@ const Overview = () => {
 
   return (
     <>
-      <h1>Payments</h1>
+      <h1 className={styles.title}>Payments</h1>
       <Table data={data} />
     </>
   );

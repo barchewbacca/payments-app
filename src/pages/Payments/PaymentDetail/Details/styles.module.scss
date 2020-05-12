@@ -3,7 +3,7 @@
 .details {
   margin: 0;
 
-  @media (min-width: $small-up) {
+  @include small-up {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-gap: 10px 30px;

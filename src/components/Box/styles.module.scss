@@ -7,7 +7,7 @@
   border-radius: 5px;
   background: #fff;
 
-  @media (min-width: $small-up) {
+  @include small-up {
     padding: 30px;
   }
 }

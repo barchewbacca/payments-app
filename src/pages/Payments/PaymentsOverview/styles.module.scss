@@ -1,0 +1,14 @@
+@import '~variables.scss';
+
+.title {
+  margin-top: 0;
+  font-size: 20px;
+
+  @include medium-up {
+    font-size: 24px;
+  }
+
+  @include large-up {
+    font-size: 30px;
+  }
+}
