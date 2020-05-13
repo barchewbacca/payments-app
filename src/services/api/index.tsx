@@ -1,3 +1,6 @@
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
 class Api {
   get(url: string, options: {}): Promise<Response> {
     /*
@@ -9,7 +12,8 @@ class Api {
      * - Payment refunds (not every payment has refunds): http://localhost:4000/api/payments/:payment_id/refunds
      * - Customer details: http://localhost:4000/api/customers/:customer_id
      */
-    return fetch(url);
+    NProgress.start();
+    return fetch(url).finally(() => NProgress.done());
   }
 }
 

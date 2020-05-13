@@ -51,10 +51,6 @@
   }
 }
 
-// .item + .item {
-//   border-top: 1px solid #edeff1;
-// }
-
 .core {
   flex-shrink: 0;
   text-align: right;
@@ -127,6 +123,7 @@
   @include medium-up {
     font-size: inherit;
     text-transform: inherit;
+    flex-basis: 30%;
   }
 }
 

@@ -98,3 +98,13 @@ hr {
   max-width: 940px;
   margin: 0 auto;
 }
+
+#nprogress {
+  .bar {
+    background: #07f !important;
+  }
+  .spinner-icon {
+    border-top-color: #07f !important;
+    border-left-color: #07f !important;
+  }
+}
