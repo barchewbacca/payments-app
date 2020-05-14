@@ -101,10 +101,10 @@ hr {
 
 #nprogress {
   .bar {
-    background: #07f !important;
+    background: var(--color-primary) !important;
   }
   .spinner-icon {
-    border-top-color: #07f !important;
-    border-left-color: #07f !important;
+    border-top-color: var(--color-primary) !important;
+    border-left-color: var(--color-primary) !important;
   }
 }

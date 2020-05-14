@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'components/Modal';
 import styles from './styles.module.scss';
-import { Customer } from 'ts-models/Customer';
+import { Customer } from 'ts-models';
 
 interface Props {
   customer: Customer;

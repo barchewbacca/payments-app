@@ -1,43 +1,72 @@
 import * as React from 'react';
+import cx from 'classnames';
 import Box from 'components/Box';
 import styles from './styles.module.scss';
-import { Payment } from 'ts-models/Payment';
+import { Payment, Refund } from 'ts-models';
 import PaymentMethodIcon from 'components/PaymentMethodIcon';
 import { getCurrencySymbol, getFormattedTimestamp } from 'utils';
 import StatusPill from 'components/StatusPill';
+import { Link } from 'react-router-dom';
 
 interface TableProps {
-  data: Payment[];
+  data: (Payment | Refund)[];
+  type: 'payments' | 'refunds';
 }
 
-interface ListItemProps {
+interface TableRowProps {
   key: string;
-  item: Payment;
+  item: Payment | Refund;
+  type: 'payments' | 'refunds';
 }
 
-const Table = ({ data }: TableProps) => (
+const Table = ({ data, type }: TableProps) => (
   <Box noPadding>
-    <ul className={styles.list}>
-      <li className={`${styles.item} ${styles.head}`}>
-        <div className={styles.placeholder}></div>
-        <div className={styles.extra}>
-          <div className={styles.description}>Details</div>
-          <div className={styles.timestamp}>Date</div>
-        </div>
-        <div className={styles.core}>
-          <div className={styles.amount}>Amount</div>
-          <div className={styles.status}>Status</div>
-        </div>
-      </li>
-      {data.map(item => (
-        <ListItem key={item.id} item={item} />
-      ))}
-    </ul>
+    <div className={cx(styles.table, styles[type])}>
+      <TableHead />
+      <TableBody data={data} type={type} />
+    </div>
   </Box>
 );
 
-const ListItem = ({ item }: ListItemProps) => (
-  <li className={styles.item}>
+const TableHead = () => (
+  <div className={`${styles.item} ${styles.head}`}>
+    <div className={styles.extra}>
+      <div className={styles.description}>Details</div>
+      <div className={styles.timestamp}>Date</div>
+    </div>
+    <div className={styles.core}>
+      <div className={styles.amount}>Amount</div>
+      <div className={styles.status}>Status</div>
+    </div>
+  </div>
+);
+
+const TableBody = ({ data, type }: TableProps) => (
+  <div className={styles.list}>
+    {data.map(item => (
+      <TableRow key={item.id} item={item} type={type} />
+    ))}
+  </div>
+);
+
+const TableRow = ({ item, type }: TableRowProps) => {
+  if (type === 'payments') {
+    return (
+      <Link to={`/payments/${item.id}`} className={styles.item}>
+        <RowData item={item} />
+      </Link>
+    );
+  } else {
+    return (
+      <div className={styles.item}>
+        <RowData item={item} />
+      </div>
+    );
+  }
+};
+
+const RowData = ({ item }: any) => (
+  <>
     <PaymentMethodIcon id={item.method} />
     <div className={styles.extra}>
       <div className={styles.description}>{item.description}</div>
@@ -53,7 +82,7 @@ const ListItem = ({ item }: ListItemProps) => (
         <StatusPill status={item.status} />
       </div>
     </div>
-  </li>
+  </>
 );
 
 export default Table;

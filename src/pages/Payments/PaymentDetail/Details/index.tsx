@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PaymentMethodIcon from 'components/PaymentMethodIcon';
 import Box from 'components/Box';
 import CustomerModal from 'components/CustomerModal';
-import { getPaymentMethodName } from 'utils';
+import { getFormattedTimestamp, getPaymentMethodName } from 'utils';
 import styles from './styles.module.scss';
-import { Payment } from 'ts-models/Payment';
-import { Customer } from 'ts-models/Customer';
+import { Customer, Payment } from 'ts-models';
+import StatusPill from 'components/StatusPill';
 
 interface Props {
   payment: Payment;
@@ -19,9 +19,11 @@ const Details = ({ payment, customer }: Props) => {
     <Box>
       <dl className={styles.details}>
         <dt>Created at</dt>
-        <dd>{payment.createdAt}</dd>
+        <dd>{getFormattedTimestamp(payment.createdAt)}</dd>
         <dt>Status</dt>
-        <dd>{payment.status}</dd>
+        <dd>
+          <StatusPill status={payment.status} />
+        </dd>
         <dt>Method</dt>
         <dd>
           <PaymentMethodIcon id={payment.method} />{' '}

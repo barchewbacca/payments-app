@@ -1,30 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Table from 'components/Table';
-import api from 'services/api';
-import { Payment } from 'ts-models/Payment';
+import { Payment } from 'ts-models';
 import styles from './styles.module.scss';
+import Box from 'components/Box';
 
-interface State {
-  data: Payment[];
+interface Props {
+  payments: Payment[];
+  error: any;
+  fetchPayments: () => void;
 }
 
-const initialState: State = { data: [] };
-
-const Overview = () => {
-  const [{ data }, setState] = useState(initialState);
-
+const Overview = ({ payments, error, fetchPayments }: Props) => {
   useEffect(() => {
-    api
-      .get('/api/payments', {})
-      .then(res => res.json())
-      .then(data => setState(() => ({ data })))
-      .catch(err => console.log(err));
-  }, []);
+    fetchPayments();
+  }, [fetchPayments]);
 
   return (
     <>
       <h1 className={styles.title}>Payments</h1>
-      <Table data={data} />
+      {error && <Box>{error.toString()}</Box>}
+      <Table data={payments} type="payments" />
     </>
   );
 };

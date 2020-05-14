@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
-import { Payment } from 'ts-models/Payment';
+import { Payment } from 'ts-models';
+import { getCurrencySymbol } from 'utils';
 
 const Header = ({ description, amount }: Payment) => (
   <>
@@ -10,7 +11,7 @@ const Header = ({ description, amount }: Payment) => (
     </p>
     <h1 className={styles.description}>{description}</h1>
     <p className={styles.amount}>
-      {amount.currency} {amount.value}
+      {getCurrencySymbol(amount.currency)} {amount.value}
     </p>
   </>
 );
