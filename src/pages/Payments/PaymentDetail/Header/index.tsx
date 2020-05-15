@@ -7,7 +7,9 @@ import { getCurrencySymbol } from 'utils';
 const Header = ({ description, amount }: Payment) => (
   <>
     <p>
-      <Link to="/payments">‹ Overview</Link>
+      <Link to="/payments" data-testid="back-btn">
+        ‹ Overview
+      </Link>
     </p>
     <h1 className={styles.description}>{description}</h1>
     <p className={styles.amount}>

@@ -17,7 +17,9 @@ const Overview = ({ payments, error, fetchPayments }: Props) => {
 
   return (
     <>
-      <h1 className={styles.title}>Payments</h1>
+      <h1 className={styles.title} data-testid="title">
+        Payments
+      </h1>
       {error && <Box>{error.toString()}</Box>}
       <Table data={payments} type="payments" />
     </>

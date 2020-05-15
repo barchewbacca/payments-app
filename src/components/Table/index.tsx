@@ -42,17 +42,21 @@ const TableHead = () => (
 );
 
 const TableBody = ({ data, type }: TableProps) => (
-  <div className={styles.list}>
+  <>
     {data.map(item => (
       <TableRow key={item.id} item={item} type={type} />
     ))}
-  </div>
+  </>
 );
 
 const TableRow = ({ item, type }: TableRowProps) => {
   if (type === 'payments') {
     return (
-      <Link to={`/payments/${item.id}`} className={styles.item}>
+      <Link
+        to={`/payments/${item.id}`}
+        className={styles.item}
+        data-testid="table-row"
+      >
         <RowData item={item} />
       </Link>
     );

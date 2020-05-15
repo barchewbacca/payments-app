@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   line-height: 1.15;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
   &.head {
     display: none;
@@ -55,6 +55,7 @@
     height: 26px;
     display: block;
     flex-shrink: 0;
+    transition: transform 0.2s linear;
   }
 
   &:not(:last-child) {
@@ -64,7 +65,14 @@
 
 a.item:hover {
   outline: 0;
-  color: var(--color-primary);
+  background-color: #edeff1;
+  color: inherit;
+
+  @include medium-up {
+    svg {
+      transform: translateX(15px);
+    }
+  }
 }
 
 .core {
