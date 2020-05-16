@@ -34,7 +34,8 @@
     "e2e": "cypress run",
     "e2e:open": "cypress open",
     "e2e:headed": "cypress run --headed",
-    "start-api": "micro api/index.js -l tcp://localhost:4000"
+    "start-api": "micro api/index.js -l tcp://localhost:4000",
+    "build": "yarn start-api & react-scripts build"
   },
   "proxy": "http://localhost:4000",
   "eslintConfig": {
