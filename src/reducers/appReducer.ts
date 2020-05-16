@@ -38,7 +38,8 @@ export const appReducer = (
     case Actions.StartFetch: {
       return state;
     }
-    case Actions.UpdateData: {
+    case Actions.UpdateData:
+    case Actions.UpdateDataFromCache: {
       return {
         ...state,
         ...payload,

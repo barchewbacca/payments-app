@@ -7,12 +7,12 @@
   width: 100%;
 
   @include medium-up {
-    padding: 20px 40px;
+    padding: 20px 0px;
     text-transform: lowercase;
   }
 
   @include large-up {
-    padding: 30px 50px;
+    padding: 30px 0px;
   }
 }
 
@@ -47,7 +47,11 @@
   }
 
   @include medium-up {
-    padding: 14px 0;
+    padding: 14px 40px;
+  }
+
+  @include large-up {
+    padding: 14px 50px;
   }
 
   svg {
@@ -55,11 +59,28 @@
     height: 26px;
     display: block;
     flex-shrink: 0;
-    transition: transform 0.2s linear;
   }
 
   &:not(:last-child) {
+    position: relative;
     border-bottom: 1px solid #edeff1;
+
+    @include medium-up {
+      border: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        width: calc(100% - 80px);
+        height: 1px;
+        background-color: #edeff1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
   }
 }
 
@@ -67,12 +88,6 @@ a.item:hover {
   outline: 0;
   background-color: #edeff1;
   color: inherit;
-
-  @include medium-up {
-    svg {
-      transform: translateX(15px);
-    }
-  }
 }
 
 .core {
