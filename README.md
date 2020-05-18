@@ -8,6 +8,7 @@
 ## 📝 Table of Contents
 
 - [About](#about)
+- [Demo](#demo)
 - [Getting Started](#getting_started)
 - [Tests](#tests)
 - [Tools](#tools)
@@ -45,6 +46,10 @@ This repo is made to showcase one of the test assignments that I have done. The 
 > - Handle state changes and exceptions.
 > - We like tests.
 > - We like documentation and clarification.
+
+## 🎮 Demo <a name = "demo"></a>
+
+Live demo available here: https://payments-app.barchewbacca.now.sh
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
